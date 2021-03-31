@@ -42,8 +42,26 @@ public class Main {
         System.out.println(n);
     }
 
+    //正誤判定
+    //EAT(位置と数が一致）の判定
+    int eatCount = 0;
+    for(int i = 0; i < 3; i++) {
+        if(ansewrs.get(i) == inputNumbers.get(i)) {
+            eatCount++;
+        }
+    }
 
+    //BITE（数だけ一致）の判定
+    int biteCount = 0;
+    if(ansewrs.get(0) == inputNumbers.get(1) || ansewrs.get(0) == inputNumbers.get(2))
+    biteCount++;
+    if(ansewrs.get(1) == inputNumbers.get(0) || ansewrs.get(1) == inputNumbers.get(2))
+    biteCount++;
+    if(ansewrs.get(2) == inputNumbers.get(0) || ansewrs.get(2) == inputNumbers.get(1))
+    biteCount++;
 
-
+    //EAT,BITEの出力
+    System.out.println("EAT: " + eatCount);
+    System.out.println("BITE: " +biteCount);
   }
 }
